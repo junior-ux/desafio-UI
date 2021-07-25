@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+import 'package:desafio_ui/screens/input_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,38 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter teste',
-      theme: ThemeData.dark(),
-      home: MyHomePage(title: 'Teste fonte'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          widget.title,
-          style: GoogleFonts.chelaOne(),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.red,
+      theme: ThemeData().copyWith(
+        primaryColor: Color(0xff210457),
+        scaffoldBackgroundColor: Color(0xffe6e6e6),
       ),
-      body: Center(
-        child: Column(),
-      ),
-      // This trailing comma makes auto-formatting nicer for build methods.
+      home: MyHomePage(),
     );
   }
 }
