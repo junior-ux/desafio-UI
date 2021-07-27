@@ -75,27 +75,37 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(30.0),
+              margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0),
               color: Colors.white70,
               height: 100,
               width: 100,
+              decoration: ,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Icon(
-                    Icons.shop_2,
-                    color: Color(0xff4b1ca2),
-                    size: 30.0,
+                children: <Widget>[
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.shop_2,
+                      color: Color(0xff4b1ca2),
+                      size: 35.0,
+                    ),
                   ),
-                  Icon(
-                    Icons.people_alt,
-                    color: Color(0xff4b1ca2),
-                    size: 30.0,
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.people_alt,
+                      color: Color(0xff4b1ca2),
+                      size: 35.0,
+                    ),
                   ),
-                  Icon(
-                    Icons.location_city,
-                    color: Color(0xff4b1ca2),
-                    size: 30.0,
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.location_city,
+                      color: Color(0xff4b1ca2),
+                      size: 35.0,
+                    ),
                   ),
                 ],
               ),
