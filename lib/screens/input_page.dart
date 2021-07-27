@@ -28,8 +28,52 @@ class _MyHomePageState extends State<MyHomePage> {
                     radius: 50,
                   ),
                 ),
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 70.0, left: 220.0),
+                      child: Text(
+                        'Olá',
+                        style: GoogleFonts.chelaOne(
+                            fontSize: 20.0, color: Color(0xff4b1ca2)),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Ziraldo!',
+                            style: GoogleFonts.chelaOne(
+                                fontSize: 75.0, color: Color(0xff210457)),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 60.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text(
+                    'Parabéns! esse mês você fez',
+                    style: GoogleFonts.chelaOne(
+                        fontSize: 25.0, color: Color(0xff4b1ca2)),
+                  ),
+                  Icon(
+                    Icons.remove_red_eye,
+                    color: Color(0xff4f426f),
+                    size: 30.0,
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
