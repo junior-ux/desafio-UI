@@ -4,7 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 class MyHomePage extends StatefulWidget {
   MyHomePage({
     Key? key,
-  }) : super(key: key);
+  }) : super(
+          key: key,
+        );
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -17,7 +19,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          children: <Widget>[
             Row(
               children: <Widget>[
                 Padding(
@@ -76,9 +78,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0),
-              color: Color(0xffd7d3e2),
-              height: 130,
+              //color: Color(0xffd7d3e2),
+              height: 120,
               width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                color: Color(0xffd7d3e2),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 10.0,
+                      offset: Offset(0.0, 6.0)),
+                ],
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -111,9 +123,19 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0),
-              color: Color(0xffd7d3e2),
-              height: 100,
+              //color: Color(0xffd7d3e2),
+              height: 120,
               width: 100,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                color: Color(0xffd7d3e2),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 10.0,
+                      offset: Offset(0.0, 6.0)),
+                ],
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -150,6 +172,20 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: 20.0, color: Color(0xff210457)),
                       ),
                     ],
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              right: 30,
+              bottom: 30,
+              child: Stack(
+                alignment: Alignment.bottomRight,
+                children: <Widget>[
+                  Icon(
+                    Icons.add,
+                    color: Color(0xff210457),
+                    size: 45.0,
                   ),
                 ],
               ),
