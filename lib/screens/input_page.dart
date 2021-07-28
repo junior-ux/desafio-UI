@@ -69,17 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icon(
                     Icons.remove_red_eye,
                     color: Color(0xff4f426f),
-                    size: 30.0,
+                    size: 25.0,
                   )
                 ],
               ),
             ),
             Container(
               margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0),
-              color: Colors.white70,
-              height: 100,
+              color: Color(0xffd7d3e2),
+              height: 130,
               width: 100,
-              decoration: ,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
@@ -87,25 +86,70 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {},
                     icon: Icon(
                       Icons.shop_2,
-                      color: Color(0xff4b1ca2),
-                      size: 35.0,
+                      color: Color(0xff210457),
+                      size: 45.0,
                     ),
                   ),
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
                       Icons.people_alt,
-                      color: Color(0xff4b1ca2),
-                      size: 35.0,
+                      color: Color(0xff210457),
+                      size: 45.0,
                     ),
                   ),
                   IconButton(
                     onPressed: () {},
                     icon: Icon(
                       Icons.location_city,
-                      color: Color(0xff4b1ca2),
-                      size: 35.0,
+                      color: Color(0xff210457),
+                      size: 45.0,
                     ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0),
+              color: Color(0xffd7d3e2),
+              height: 100,
+              width: 100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20.0, left: 6.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.shop_2,
+                            color: Color(0xff210457),
+                            size: 45.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      Text(
+                        'R\$ 34.000,00',
+                        style: GoogleFonts.acme(
+                          fontSize: 35.0,
+                          color: Color(0xff4b1ca2),
+                        ),
+                      ),
+                      Text(
+                        'em novos pedidos',
+                        style: GoogleFonts.acme(
+                            fontSize: 20.0, color: Color(0xff210457)),
+                      ),
+                    ],
                   ),
                 ],
               ),
