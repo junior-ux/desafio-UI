@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:badges/badges.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({
@@ -60,72 +61,193 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.only(
                 top: 60.0,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Text(
-                    'Parabéns! esse mês você fez',
-                    style: GoogleFonts.chelaOne(
-                        fontSize: 25.0, color: Color(0xff4b1ca2)),
-                  ),
-                  Icon(
-                    Icons.remove_red_eye,
-                    color: Color(0xff4f426f),
-                    size: 25.0,
-                  )
-                ],
+              child: Padding(
+                padding:
+                    const EdgeInsets.only(left: 30.0, right: 30.0, bottom: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Parabéns! esse mês você fez',
+                      style: GoogleFonts.chelaOne(
+                          fontSize: 20.0, color: Color(0xff4b1ca2)),
+                    ),
+                    Icon(
+                      Icons.remove_red_eye,
+                      color: Color(0xff4f426f),
+                      size: 25.0,
+                    )
+                  ],
+                ),
               ),
+            ),
+            //container 1
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 120,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    color: Color(0xffd7d3e2),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 10.0,
+                        offset: Offset(0.0, 6.0),
+                      ),
+                    ],
+                  ),
+                  //color: Color(0xffd7d3e2),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      //icone 1
+                      Container(
+                        margin: EdgeInsets.only(left: 8.0, top: 20.0),
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Badge(
+                                  position:
+                                      BadgePosition.topEnd(top: -10, end: -18),
+                                  badgeColor: Color(0xffd7d3e2),
+                                  badgeContent: Text(
+                                    '10',
+                                    style: GoogleFonts.concertOne(
+                                        color: Color(0xff4b1ca2),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  child: IconButton(
+                                      icon: Icon(
+                                        Icons.shop_2,
+                                        color: Color(0xff210457),
+                                        size: 40.0,
+                                      ),
+                                      onPressed: () {}),
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      'novos\npedidos',
+                                      style: GoogleFonts.acme(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xff4b1ca2),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Icone 2
+                      Container(
+                        margin: EdgeInsets.only(left: 8.0, top: 20.0),
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Badge(
+                                  position:
+                                      BadgePosition.topEnd(top: -10, end: -18),
+                                  badgeColor: Color(0xffd7d3e2),
+                                  badgeContent: Text(
+                                    '20',
+                                    style: GoogleFonts.concertOne(
+                                        color: Color(0xff4b1ca2),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  child: IconButton(
+                                      icon: Icon(
+                                        Icons.people,
+                                        color: Color(0xff210457),
+                                        size: 40.0,
+                                      ),
+                                      onPressed: () {}),
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      'novos\nclientes',
+                                      style: GoogleFonts.acme(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xff4b1ca2),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      //Icone 3
+                      Container(
+                        margin: EdgeInsets.only(left: 8.0, top: 20.0),
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Badge(
+                                  position: BadgePosition.topEnd(
+                                    top: -10,
+                                    end: -15,
+                                  ),
+                                  badgeColor: Color(0xffd7d3e2),
+                                  badgeContent: Text(
+                                    '20',
+                                    textAlign: TextAlign.center,
+                                    style: GoogleFonts.concertOne(
+                                        color: Color(0xff4b1ca2),
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  child: IconButton(
+                                      icon: Icon(
+                                        Icons.location_city,
+                                        color: Color(0xff210457),
+                                        size: 40.0,
+                                      ),
+                                      onPressed: () {}),
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      'novos\nclientes',
+                                      style: GoogleFonts.acme(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0xff4b1ca2),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             Container(
               margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0),
-              //color: Color(0xffd7d3e2),
               height: 120,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                color: Color(0xffd7d3e2),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 10.0,
-                      offset: Offset(0.0, 6.0)),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.shop_2,
-                      color: Color(0xff210457),
-                      size: 45.0,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.people_alt,
-                      color: Color(0xff210457),
-                      size: 45.0,
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.location_city,
-                      color: Color(0xff210457),
-                      size: 45.0,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 30.0, top: 10.0, right: 30.0),
-              //color: Color(0xffd7d3e2),
-              height: 120,
-              width: 100,
+              width: 350,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(20.0)),
                 color: Color(0xffd7d3e2),
@@ -161,31 +283,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: <Widget>[
                       Text(
                         'R\$ 34.000,00',
-                        style: GoogleFonts.acme(
+                        style: GoogleFonts.concertOne(
                           fontSize: 35.0,
                           color: Color(0xff4b1ca2),
                         ),
                       ),
-                      Text(
-                        'em novos pedidos',
-                        style: GoogleFonts.acme(
-                            fontSize: 20.0, color: Color(0xff210457)),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 12.0),
+                        child: Text(
+                          'em novos pedidos',
+                          style: GoogleFonts.acme(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xff210457),
+                          ),
+                        ),
                       ),
                     ],
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-              right: 30,
-              bottom: 30,
-              child: Stack(
-                alignment: Alignment.bottomRight,
-                children: <Widget>[
-                  Icon(
-                    Icons.add,
-                    color: Color(0xff210457),
-                    size: 45.0,
                   ),
                 ],
               ),
