@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:badges/badges.dart';
+import 'package:desafio_ui/components/constants.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({
@@ -14,6 +15,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _mudabag = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +32,169 @@ class _MyHomePageState extends State<MyHomePage> {
             _ContainerIcones(),
             //container valor de pedidos
             _ContainerValor(),
+
+            Spacer(),
+
+            Padding(
+              padding: EdgeInsets.only(
+                top: 10.0,
+                left: 18.0,
+                right: 18.0,
+                bottom: 15.0,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _mudabag = 0;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: _mudabag == 0 ? kCorPrimaria : kCorTercearia,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 16.0),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.home,
+                              color:
+                                  _mudabag == 0 ? Colors.white : Colors.white,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 15.0),
+                              child: Text(
+                                _mudabag == 0 ? 'Home' : '',
+                                style: GoogleFonts.chelaOne(
+                                    fontSize: 16,
+                                    color: _mudabag == 0
+                                        ? Colors.white
+                                        : Colors.teal),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _mudabag = 1;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: _mudabag == 1 ? kCorPrimaria : kCorSecundaria,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 16.0),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.shop_2,
+                              color:
+                                  _mudabag == 1 ? Colors.white : Colors.white,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 15.0),
+                              child: Text(
+                                _mudabag == 1 ? 'Pedidos' : '',
+                                style: GoogleFonts.chelaOne(
+                                    fontSize: 16,
+                                    color: _mudabag == 1
+                                        ? Colors.white
+                                        : Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _mudabag = 2;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: _mudabag == 2 ? kCorPrimaria : kCorSecundaria,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 16.0),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.people,
+                              color:
+                                  _mudabag == 2 ? Colors.white : Colors.white,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 15.0),
+                              child: Text(
+                                _mudabag == 2 ? 'Clientes' : '',
+                                style: GoogleFonts.chelaOne(
+                                    fontSize: 16,
+                                    color: _mudabag == 2
+                                        ? Colors.white
+                                        : Colors.white),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _mudabag = 3;
+                      });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: _mudabag == 3 ? kCorPrimaria : kCorSecundaria,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 16.0),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.trending_up,
+                              color:
+                                  _mudabag == 3 ? Colors.white : Colors.white,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 15.0),
+                              child: Text(
+                                _mudabag == 3 ? 'Vendas' : '',
+                                style: GoogleFonts.chelaOne(
+                                    fontSize: 16,
+                                    color: _mudabag == 3
+                                        ? Colors.white
+                                        : Colors.teal),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -61,7 +227,9 @@ class _AvatarTexto extends StatelessWidget {
               child: Text(
                 'Olá',
                 style: GoogleFonts.chelaOne(
-                    fontSize: 20.0, color: Color(0xff4b1ca2)),
+                  fontSize: 20.0,
+                  color: kCorTercearia,
+                ),
               ),
             ),
             Padding(
@@ -129,7 +297,7 @@ class _ContainerIcones extends StatelessWidget {
       children: [
         Container(
           height: 120,
-          width: 335,
+          width: 350,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(20.0)),
             color: Color(0xffd7d3e2),
@@ -157,7 +325,7 @@ class _ContainerIcones extends StatelessWidget {
                           position: BadgePosition.topEnd(top: -10, end: -18),
                           badgeColor: Color(0xffd7d3e2),
                           badgeContent: Text(
-                            '10',
+                            '12',
                             style: GoogleFonts.concertOne(
                                 color: Color(0xff4b1ca2),
                                 fontSize: 16.0,
