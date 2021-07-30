@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:badges/badges.dart';
 import 'package:desafio_ui/components/constants.dart';
+import 'package:desafio_ui/components/FabButton.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({
@@ -14,8 +17,25 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation _animation;
   int _mudabag = 0;
+
+  @override
+  void initState() {
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+    _animation = Tween(begin: 0.0, end: 1.0).animate(_animationController);
+    super.initState();
+
+    _animationController.addListener(() {
+      setState(
+        () {},
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +52,80 @@ class _MyHomePageState extends State<MyHomePage> {
             _ContainerIcones(),
             //container valor de pedidos
             _ContainerValor(),
-
             Spacer(),
+            Container(
+              height: 150,
+              width: 150,
+              child: Stack(
+                children: [
+                  Positioned(
+                    right: 20,
+                    bottom: 30,
+                    child: Stack(
+                      children: [
+                        //representantes
+                        Transform.translate(
+                          offset: Offset.fromDirection(3 * pi / 2, 80),
+                          child: FabButton(
+                            width: 40,
+                            heigth: 40,
+                            color: kCorSecundaria,
+                            icon: Icon(
+                              Icons.person_add,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                            onClick: () {},
+                          ),
+                        ),
+                        //pedidos
+                        Transform.translate(
+                          offset: Offset.fromDirection(5 * pi / 4, 80),
+                          child: FabButton(
+                            width: 40,
+                            heigth: 40,
+                            color: kCorSecundaria,
+                            icon: Icon(
+                              Icons.add_shopping_cart,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                            onClick: () {},
+                          ),
+                        ),
+                        //clientes
+                        Transform.translate(
+                          offset: Offset.fromDirection(pi, 80),
+                          child: FabButton(
+                            width: 40,
+                            heigth: 40,
+                            color: kCorSecundaria,
+                            icon: Icon(
+                              Icons.group_add,
+                              size: 25,
+                              color: Colors.white,
+                            ),
+                            onClick: () {},
+                          ),
+                        ),
+                        //FAB
+                        FabButton(
+                          width: 80,
+                          heigth: 80,
+                          color: kCorPrimaria,
+                          icon: Icon(
+                            Icons.add,
+                            size: 30,
+                            color: Colors.white,
+                          ),
+                          onClick: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
             Padding(
               padding: EdgeInsets.only(
