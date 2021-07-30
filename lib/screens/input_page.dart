@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                          color: _mudabag == 0 ? kCorPrimaria : kCorTercearia,
+                          color: _mudabag == 0 ? kCorPrimaria : kCorSecundaria,
                           borderRadius: BorderRadius.circular(15)),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -69,11 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               padding: const EdgeInsets.only(left: 15.0),
                               child: Text(
                                 _mudabag == 0 ? 'Home' : '',
-                                style: GoogleFonts.chelaOne(
+                                style: TextStyle(
+                                    fontFamily: 'Marker',
                                     fontSize: 16,
                                     color: _mudabag == 0
                                         ? Colors.white
-                                        : Colors.teal),
+                                        : Colors.white),
                               ),
                             ),
                           ],
@@ -106,7 +107,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               padding: const EdgeInsets.only(left: 15.0),
                               child: Text(
                                 _mudabag == 1 ? 'Pedidos' : '',
-                                style: GoogleFonts.chelaOne(
+                                style: TextStyle(
+                                    fontFamily: 'Marker',
                                     fontSize: 16,
                                     color: _mudabag == 1
                                         ? Colors.white
@@ -143,7 +145,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               padding: const EdgeInsets.only(left: 15.0),
                               child: Text(
                                 _mudabag == 2 ? 'Clientes' : '',
-                                style: GoogleFonts.chelaOne(
+                                style: TextStyle(
+                                    fontFamily: 'Marker',
                                     fontSize: 16,
                                     color: _mudabag == 2
                                         ? Colors.white
@@ -180,7 +183,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               padding: const EdgeInsets.only(left: 15.0),
                               child: Text(
                                 _mudabag == 3 ? 'Vendas' : '',
-                                style: GoogleFonts.chelaOne(
+                                style: TextStyle(
+                                    fontFamily: 'Marker',
                                     fontSize: 16,
                                     color: _mudabag == 3
                                         ? Colors.white
@@ -226,20 +230,24 @@ class _AvatarTexto extends StatelessWidget {
               padding: const EdgeInsets.only(top: 70.0, left: 210.0),
               child: Text(
                 'Olá',
-                style: GoogleFonts.chelaOne(
+                style: TextStyle(
+                  fontFamily: 'Marker',
                   fontSize: 20.0,
                   color: kCorTercearia,
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 40.0),
+              padding: const EdgeInsets.only(left: 45.0),
               child: Row(
                 children: [
                   Text(
                     'Ziraldo!',
-                    style: GoogleFonts.chelaOne(
-                        fontSize: 70.0, color: Color(0xff210457)),
+                    style: TextStyle(
+                      fontFamily: 'Marker',
+                      fontSize: 65.0,
+                      color: kCorPrimaria,
+                    ),
                   ),
                 ],
               ),
@@ -263,19 +271,19 @@ class _TextoParabens extends StatelessWidget {
         top: 60.0,
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 35.0, right: 35.0, bottom: 8.0),
+        padding: const EdgeInsets.only(left: 45.0, right: 40.0, bottom: 8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
               'Parabéns! esse mês você fez',
-              style: GoogleFonts.chelaOne(
-                  fontSize: 20.0, color: Color(0xff4b1ca2)),
+              style: TextStyle(
+                  fontFamily: 'Marker', fontSize: 20.0, color: kCorTercearia),
             ),
             Icon(
               Icons.remove_red_eye,
-              color: Color(0xff4f426f),
-              size: 25.0,
+              color: kCorSecundaria,
+              size: 30.0,
             )
           ],
         ),
@@ -343,10 +351,10 @@ class _ContainerIcones extends StatelessWidget {
                           children: [
                             Text(
                               'novos\npedidos',
-                              style: GoogleFonts.acme(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xff4b1ca2),
+                              style: TextStyle(
+                                fontFamily: 'Marker',
+                                fontSize: 18.0,
+                                color: kCorTercearia,
                               ),
                             ),
                           ],
@@ -386,10 +394,10 @@ class _ContainerIcones extends StatelessWidget {
                           children: [
                             Text(
                               'novos\nclientes',
-                              style: GoogleFonts.acme(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xff4b1ca2),
+                              style: TextStyle(
+                                fontFamily: 'Marker',
+                                fontSize: 18.0,
+                                color: kCorTercearia,
                               ),
                             ),
                           ],
@@ -433,10 +441,10 @@ class _ContainerIcones extends StatelessWidget {
                           children: [
                             Text(
                               'novos\nclientes',
-                              style: GoogleFonts.acme(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xff4b1ca2),
+                              style: TextStyle(
+                                fontFamily: 'Marker',
+                                fontSize: 18.0,
+                                color: kCorTercearia,
                               ),
                             ),
                           ],
@@ -485,7 +493,7 @@ class _ContainerValor extends StatelessWidget {
                   onPressed: () {},
                   icon: Icon(
                     Icons.shop_2,
-                    color: Color(0xff210457),
+                    color: kCorPrimaria,
                     size: 45.0,
                   ),
                 ),
@@ -507,10 +515,11 @@ class _ContainerValor extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 12.0),
                 child: Text(
                   'em novos pedidos',
-                  style: GoogleFonts.acme(
+                  style: TextStyle(
+                    fontFamily: 'Marker',
                     fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xff210457),
+                    color: kCorPrimaria,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
